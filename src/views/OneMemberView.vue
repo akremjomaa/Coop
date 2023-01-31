@@ -56,7 +56,7 @@ function getMember() {
               <h2 class="subtitle"><router-link :to="`/oneMember/${message.member_id}`"><img
                     :src="`https://gravatar.com/avatar/${message.member_id}?s=200&d=robohash&r=x`" alt=""></router-link>
               </h2>
-              <h1 class="subtitle has-text-info"><router-link :to="`/oneConversationView/${message.channel_id}`"
+              <h1 class="subtitle has-text-info"><router-link :to="`/oneConversation/${message.channel_id}`"
                   v-html="message.message">
 
                 </router-link></h1>

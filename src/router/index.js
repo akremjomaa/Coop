@@ -35,13 +35,13 @@ const router = createRouter({
       component: () => import('../views/ConversationsListView.vue')
     },
     {
-      path: '/createConversationView',
-      name: 'createConversationView',
+      path: '/createConversation',
+      name: 'createConversation',
       component: () => import('../views/CreateConversationView.vue')
     },
     {
-      path: '/oneConversationView/:id',
-      name: 'oneConversationView',
+      path: '/oneConversation/:id',
+      name: 'oneConversation',
       component: () => import('../views/OneConversationView.vue')
     },
   ]

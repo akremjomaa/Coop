@@ -40,7 +40,7 @@ function getMessages() {
 
 <template>
     <div class="box column is-9 is-offset-2-desktop is-flex is-desktop " :data-id="state.conversation.id">
-        <div class="column is-10  is-desktop"><router-link :to="`/oneConversationView/${state.conversation.id}`">
+        <div class="column is-10  is-desktop"><router-link :to="`/oneConversation/${state.conversation.id}`">
                 <h2 class="subtitle">{{ state.conversation.topic }}</h2>
                 <h6 class="subtitle">{{ state.conversation.label }}</h6>
             </router-link>

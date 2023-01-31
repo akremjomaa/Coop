@@ -26,7 +26,7 @@ function getConversations() {
 <template>
   <main>
     <h1 class="title has-text-link">List of conversations</h1>
-    <div> <router-link to="/createConversationView" class="button is-info">Create a new conversation</router-link></div>
+    <div> <router-link to="/createConversation" class="button is-info">Create a new conversation</router-link></div>
     <div>
 
 

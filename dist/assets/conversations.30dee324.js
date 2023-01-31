@@ -1,0 +1,1 @@
+import{d as o,f as a,g as n}from"./index.4334a7d3.js";const i=o("conversations",()=>{a();const e=n({channel:{},messages:[],memberMessages:[],post:{},put:{}});async function s(t){e.memberMessages=e.messages.filter(r=>r.member_id===t).slice(0,10),console.log(e.memberMessages)}return{state:e,getMemberMessages:s}},{persist:!0});export{i as u};

@@ -1,6 +1,6 @@
 const api = (() => {
     const BASE = 'https://allweb.fun/coop/api/';
-    const API_KEY = '3e058ec8fd902a466b4fe5bf487f1b07c996111e'
+    const API_KEY = '2471291eaba87fb51703dc0dbb466faf07ff91b2'
     function query(method, route, params) {
         const body = params?.body;
 
@@ -31,6 +31,9 @@ const api = (() => {
         },
         put(route, params) {
             return query('PUT', route, params)
+        },
+        patch(route, params) {
+            return query('PATCH', route, params)
         },
         delete(route, params) {
             return query('DELETE', route, params)

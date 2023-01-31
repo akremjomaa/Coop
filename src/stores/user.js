@@ -7,7 +7,7 @@ export const useUserStore = defineStore('user', () => {
 
   function setConnected() {
     isConnected.value = true;
-  }  
+  }
   function disconnect() {
     isConnected.value = false;
   }

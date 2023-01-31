@@ -1,14 +1,17 @@
-# coop
+# Projet académique Coop
 
-This template should help get you started developing with Vue 3 in Vite.
+## Jomaa Akrem 
 
-## Recommended IDE Setup
+## URL Dépot Git 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+https://github.com/akremjomaa/Coop
 
-## Customize configuration
+## URL Netlify 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Remarque 
+
+Les fonctionnalités prioritaires + facultatifs sont en marche . 
+
 
 ## Project Setup
 

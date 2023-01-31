@@ -1,40 +1,41 @@
 <script setup>
 import { ref } from '@vue/reactivity';
 import { useRouter } from 'vue-router';
-// import {useUserStore} from '@/stores/user';
 
 const router = useRouter()
+
 let member = reactive({
     fullname: '',
     email: '',
     password: ''
 })
 const checkPassword = ref('');
-console.log(checkPassword.value)
 function validationFormulaire() {
-    if(member.password !== checkPassword.value){
-                alert("les mots de passe ne sont pas compatibles ! vérifiez de nouveau !")
-            }
-    else{
-    api.post('members', {
-        body: member
-    }).then(response => {
-        console.log(checkPassword.value)
-    
-        console.log(response)
-        if (response.message) {
-            alert(response.message)
-        } else {
+    if (member.password !== checkPassword.value) {
+        alert("les mots de passe ne sont pas compatibles ! vérifiez de nouveau !")
+    }
+    else {
+        api.post('members', {
+            body: member
+        }).then(response => {
+            console.log(checkPassword.value)
+
             console.log(response)
-            if (confirm("votre compte à été créé avec succés")) {
-               
+            if (response.message) {
+                alert(response.message)
+            } else {
+                console.log(response)
+                if (confirm("votre compte à été créé avec succés")) {
+                    router.push('/connect');
+
+                }
+            } {
+
             }
-        } {
+        }).catch(error => console.log(error))
 
-        }
-    }).catch(error => console.log(error))
-
-}}
+    }
+}
 </script>
 
 <template>
@@ -53,8 +54,7 @@ function validationFormulaire() {
             <div class="field">
                 <label class="label">E-mail</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" v-model="member.email" required="required" type="email"
-                        placeholder="E-mail">
+                    <input class="input" v-model="member.email" required="required" type="email" placeholder="E-mail">
 
                 </div>
             </div>
@@ -79,7 +79,9 @@ function validationFormulaire() {
                 </div>
             </div>
         </form>
-        <div><p>Vous avez deja un compte ?</p><router-link to="/connect">Connexion</router-link></div> 
+        <div>
+            <p>Vous avez deja un compte ?</p><router-link to="/connect">Connexion</router-link>
+        </div>
 
     </main>
 </template>

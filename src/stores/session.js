@@ -1,12 +1,13 @@
 import { defineStore } from "pinia";
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 import { useRouter } from "vue-router";
 
 export const useSessionStore = defineStore('session', () => {
     const router = useRouter();
     const data = reactive({
         member: {},
-        token: false
+        token: false,
+        openMenu: false
     });
     /** 
 * @param {object} member
@@ -17,11 +18,14 @@ export const useSessionStore = defineStore('session', () => {
     function setSession(member, token) {
         data.member = member;
         data.token = token
+        data.openMenu = true
     }
     function clearSession() {
-        localStorage.clear();
+        data.member = {};
+        data.token = false;
+        data.openMenu = false
     }
-   
+
 
     async function isValid() {
         console.log('test')
@@ -43,7 +47,7 @@ export const useSessionStore = defineStore('session', () => {
     function connect() {
         router.push('/connect')
     }
-    return { data, setSession, clearSession, isValid,connect}
+    return { data, setSession, clearSession, isValid, connect }
 }, {
     persist: true,
 })

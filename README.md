@@ -13,7 +13,8 @@ https://jomaa-coop.netlify.app/
 ## Remarque 
 
 Les fonctionnalités prioritaires + facultatifs sont en marche . 
-
+Le seul bug est que lorsqu'on supprime un utilisateur , ses messages restent toujours disponible.
+Donc lorsqu'on clique sur un nom d'utilisateur qui était supprimé , une page vide va être affichée.
 
 ## Project Setup
 

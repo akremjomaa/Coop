@@ -22,6 +22,7 @@ function deleteMember() {
   })
 
 }
+
 async function deleteOtherMember() {
   if (props.member.id === session.data.member.id) {
     alert("You can't delete your own account !")

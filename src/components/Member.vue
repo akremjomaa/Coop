@@ -7,7 +7,8 @@ const props = defineProps(['member'])
 
 const session = useSessionStore();
 const state = reactive({
-  member: ''
+  member: '',
+  isDeleted : false
 })
 onMounted(() => {
   state.member = props.member;
@@ -16,7 +17,7 @@ onMounted(() => {
 function deleteMember() {
   api.delete(`members/${props.member.id}?token=${session.data.token}`).then((response) => {
     state.member = response
-    window.location.reload()
+    state.isDeleted = true
 
   })
 
@@ -34,6 +35,7 @@ async function deleteOtherMember() {
 </script>
 
 <template>
+  <template v-if="!state.isDeleted">
   <div class="box column is-9 is-offset-2-desktop is-flex is-desktop " :data-id="props.member.id">
     <div class="column is-10  is-desktop">
       <h2 class="subtitle">{{ props.member.fullname }}</h2>
@@ -44,5 +46,5 @@ async function deleteOtherMember() {
         class="button is-link is-outlined">👤</router-link></div>
     <button @click="deleteOtherMember" type='button' class="button is-link is-outlined">🗑️</button>
   </div>
-
+</template>
 </template>

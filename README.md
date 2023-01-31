@@ -8,6 +8,8 @@ https://github.com/akremjomaa/Coop
 
 ## URL Netlify 
 
+https://jomaa-coop.netlify.app/
+
 ## Remarque 
 
 Les fonctionnalités prioritaires + facultatifs sont en marche . 

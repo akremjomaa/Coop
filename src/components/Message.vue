@@ -15,7 +15,9 @@ const conversation = useConversationsStore()
 
 const state = reactive({
     modeEdition: false,
-    message: ''
+    message: '',
+    isDeleted : false
+
 })
 onMounted(() => {
     state.message = props.message.message;
@@ -35,13 +37,14 @@ function updateThisMessage() {
 function deleteMessage() {
     api.delete(`channels/${props.message.channel_id}/posts/${props.message.id}?token=${session.data.token}`).then(response => {
         conversation.state.messages = response
-        window.location.reload()
+        state.isDeleted = true
     })
 
 }
 </script>
 
 <template>
+  <template v-if="!state.isDeleted">
 
     <div class="box column is-9 is-offset-2-desktop is-flex is-desktop " :data-id="props.conversation.channel_id">
         <div class="column is-10  is-desktop">
@@ -64,4 +67,5 @@ function deleteMessage() {
 
 
     </div>
+</template>
 </template>

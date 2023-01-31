@@ -59,8 +59,8 @@ function postMessage() {
     }).then(response => {
         if (response.message) {
             alert(response.message)
-            window.location.reload()
             state.postMessage.message = ""
+            state.messages = state.messages.concat(response)
         } else {
             console.log(response)
         }
